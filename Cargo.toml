@@ -3,6 +3,10 @@ name = "rsweb-app"
 version = "0.1.0"
 edition = "2021"
 
+[features]
+default = []
+redis = []
+
 [dependencies]
 axum = { version = "0.7", features = ["tracing"] }
 axum-macros = "0.4"
@@ -14,7 +18,7 @@ serde = "1.0"
 serde_json = "1.0"
 toml = "0.8"
 tracing = "0.1"
-tracing-subscriber = { version = "0.3" }
+tracing-subscriber = { version = "0.3", features = ["env-filter"]}
 test-log = "0.2"
 anyhow = "1.0"
 bcrypt = "0.16.0"
